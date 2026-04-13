@@ -4,79 +4,78 @@
 
 @layer base {
   :root {
-    --background: 150 8% 96%;
-    --foreground: 150 20% 8%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 150 20% 8%;
+    --card-foreground: 0 0% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 150 20% 8%;
-    --primary: 142 60% 35%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 145 40% 36%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 150 10% 90%;
-    --secondary-foreground: 150 20% 15%;
-    --muted: 150 8% 92%;
-    --muted-foreground: 150 10% 45%;
-    --accent: 142 50% 45%;
-    --accent-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 20%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 50%;
+    --accent: 0 0% 93%;
+    --accent-foreground: 0 0% 15%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-    --border: 150 10% 85%;
-    --input: 150 10% 88%;
-    --ring: 142 60% 35%;
-    --radius: 1rem;
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: 145 40% 36%;
+    --radius: 0.75rem;
 
-    --avo-green: 142 60% 35%;
-    --avo-green-light: 142 50% 45%;
-    --avo-green-pale: 142 30% 90%;
-    --avo-dark: 150 20% 8%;
-    --avo-bubble-out: 142 55% 38%;
-    --avo-bubble-in: 0 0% 100%;
-    --avo-sidebar: 0 0% 100%;
-    --avo-chat-bg: 150 15% 93%;
+    --bubble-out: 145 40% 36%;
+    --bubble-in: 0 0% 97%;
+    --sidebar-bg: 0 0% 98%;
+    --chat-bg: 0 0% 94%;
   }
 
   .dark {
-    --background: 220 15% 10%;
-    --foreground: 150 10% 92%;
-    --card: 220 15% 13%;
-    --card-foreground: 150 10% 92%;
-    --popover: 220 15% 13%;
-    --popover-foreground: 150 10% 92%;
-    --primary: 142 55% 42%;
+    --background: 220 14% 10%;
+    --foreground: 0 0% 92%;
+    --card: 220 14% 13%;
+    --card-foreground: 0 0% 92%;
+    --popover: 220 14% 13%;
+    --popover-foreground: 0 0% 92%;
+    --primary: 145 38% 40%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 12% 18%;
-    --secondary-foreground: 150 10% 85%;
-    --muted: 220 12% 16%;
-    --muted-foreground: 150 8% 55%;
-    --accent: 142 50% 38%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 62% 45%;
+    --secondary: 220 10% 18%;
+    --secondary-foreground: 0 0% 85%;
+    --muted: 220 10% 16%;
+    --muted-foreground: 0 0% 52%;
+    --accent: 220 10% 20%;
+    --accent-foreground: 0 0% 90%;
+    --destructive: 0 60% 45%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 12% 20%;
-    --input: 220 12% 18%;
-    --ring: 142 55% 42%;
+    --border: 220 10% 20%;
+    --input: 220 10% 18%;
+    --ring: 145 38% 40%;
 
-    --avo-green: 142 55% 42%;
-    --avo-green-light: 142 50% 50%;
-    --avo-green-pale: 142 20% 18%;
-    --avo-dark: 150 10% 92%;
-    --avo-bubble-out: 142 50% 35%;
-    --avo-bubble-in: 220 15% 18%;
-    --avo-sidebar: 220 15% 11%;
-    --avo-chat-bg: 220 12% 9%;
+    --bubble-out: 145 35% 34%;
+    --bubble-in: 220 12% 18%;
+    --sidebar-bg: 220 14% 11%;
+    --chat-bg: 220 12% 9%;
   }
 }
 
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
   }
   body {
     @apply bg-background text-foreground;
-    font-family: "Golos Text", sans-serif;
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+      sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
   }
   ::-webkit-scrollbar {
-    width: 4px;
+    width: 3px;
+    height: 3px;
   }
   ::-webkit-scrollbar-track {
     background: transparent;
@@ -88,44 +87,26 @@
 }
 
 @layer utilities {
-  .avo-sidebar {
-    background: hsl(var(--avo-sidebar));
+  .sidebar-bg {
+    background: hsl(var(--sidebar-bg));
   }
-  .avo-chat-bg {
-    background: hsl(var(--avo-chat-bg));
+  .chat-bg {
+    background: hsl(var(--chat-bg));
   }
+
   .bubble-out {
-    background: hsl(var(--avo-bubble-out));
+    background: hsl(var(--bubble-out));
     color: #fff;
-    border-radius: 18px 18px 4px 18px;
+    border-radius: 16px 16px 4px 16px;
   }
   .bubble-in {
-    background: hsl(var(--avo-bubble-in));
+    background: hsl(var(--bubble-in));
     color: hsl(var(--foreground));
-    border-radius: 18px 18px 18px 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 16px 16px 16px 4px;
   }
   .glass {
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-  .animate-fade-in {
-    animation: fadeIn 0.3s ease forwards;
-  }
-  .animate-slide-up {
-    animation: slideUp 0.3s ease forwards;
-  }
-  .animate-scale-in {
-    animation: scaleIn 0.2s ease forwards;
-  }
-  .animate-bounce-in {
-    animation: bounceIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-  }
-  .hover-scale {
-    transition: transform 0.15s ease;
-  }
-  .hover-scale:hover {
-    transform: scale(1.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 }
 
@@ -140,7 +121,7 @@
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -150,7 +131,7 @@
 @keyframes scaleIn {
   from {
     opacity: 0;
-    transform: scale(0.92);
+    transform: scale(0.94);
   }
   to {
     opacity: 1;
@@ -160,7 +141,7 @@
 @keyframes bounceIn {
   from {
     opacity: 0;
-    transform: scale(0.7);
+    transform: scale(0.75);
   }
   to {
     opacity: 1;
@@ -172,12 +153,24 @@
   60%,
   100% {
     transform: translateY(0);
-    opacity: 0.4;
+    opacity: 0.35;
   }
   30% {
     transform: translateY(-4px);
     opacity: 1;
   }
+}
+.animate-fade-in {
+  animation: fadeIn 0.25s ease forwards;
+}
+.animate-slide-up {
+  animation: slideUp 0.25s ease forwards;
+}
+.animate-scale-in {
+  animation: scaleIn 0.2s ease forwards;
+}
+.animate-bounce-in {
+  animation: bounceIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 .typing-dot {
   animation: typingDot 1.2s infinite;
@@ -187,23 +180,4 @@
 }
 .typing-dot:nth-child(3) {
   animation-delay: 0.4s;
-}
-
-@keyframes pulse-ring {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1.6);
-    opacity: 0;
-  }
-}
-.pulse-ring::before {
-  content: "";
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  background: hsl(var(--avo-green));
-  animation: pulse-ring 1.5s infinite;
 }
